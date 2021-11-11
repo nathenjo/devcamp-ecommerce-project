@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
 
 import { reduxForm, Field } from 'redux-form';
+import Details from '../details';
 
 import { FormInput, FormButton } from '../formFields';
+import history from '../../history';
 
 class SignInForm extends Component {
      render() {
          const { className, handleSubmit } = this.props;
+         const links = [
+           {
+             _id: 0,
+             title: 'Not Registered? Create Account Here',
+             onClick: () => history.push('/signup')
+           },
+           {
+            _id: 1,
+            title: 'Forgot Account Email',
+            onClick: () => console.log('Forgot email')
+          },
+          {
+            _id: 2,
+            title: 'Forgot Password',
+            onClick: () => console.log('Link password')
+          }
+         ]
        return(
          <form onSubmit={handleSubmit} className={`${className} 'sign-in-form`}>
              <Field
@@ -34,6 +53,7 @@ class SignInForm extends Component {
                 title='Login'
                 component={FormButton}
             />
+            <Details className='sign-in-form__details' title='Quick Links' links={links}/>
          </form>
        );
    }
