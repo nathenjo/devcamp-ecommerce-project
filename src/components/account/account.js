@@ -27,7 +27,7 @@ class Account extends Component {
         {
           _id: 0,
             title: 'Purchase History',
-            actiive: true,
+            active: true,
             component: <PurchaseHistory/>
         },
         {
