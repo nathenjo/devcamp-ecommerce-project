@@ -51,7 +51,6 @@ class Shop extends Component {
                 }
              </div>
              {/* shop cart button */}
-             Shop
          </div>
        );
    }
