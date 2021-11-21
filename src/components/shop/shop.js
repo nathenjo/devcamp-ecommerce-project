@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import ShopCart from './shopCart';
 import ShopProduct from './shopProduct';
 import ShopSearchBar from './shopSearchBar';
 
 class Shop extends Component {
 
     componentDidMount() {
-        // fetch shop products action creator
         const headerLinks = [
             {
               _id: 0,
@@ -22,7 +22,6 @@ class Shop extends Component {
 
 
 
-            // filter products with links
           this.props.fetchShopProducts();
     }
 
@@ -38,6 +37,7 @@ class Shop extends Component {
     }
 
      render() {
+       return <ShopCart className='shop__cart' />
        return(
          <div className='shop'>
            <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
@@ -50,7 +50,6 @@ class Shop extends Component {
                   })
                 }
              </div>
-             {/* shop cart button */}
          </div>
        );
    }
