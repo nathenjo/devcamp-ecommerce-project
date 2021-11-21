@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 html {
     font-size: 62.5%;
 }
@@ -12,10 +14,10 @@ html {
 
 body {
     font-family: "Open Sans";
-    color: #808080;
+    color: $gray;
 }
 
-@import './variables.scss';
+
 @import './layout.scss';
 @import './details.scss';
 @import './form-fields.scss';
