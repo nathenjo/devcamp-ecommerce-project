@@ -1,7 +1,6 @@
-import e from 'express';
 import {
-    SET_PURCHASE_DETAIL,
     SET_USER_PURCHASES,
+    SET_PURCHASE_DETAIL,
     SET_CART_PRODUCTS,
     ADD_CART_PRODUCT
 } from '../actions/types';
@@ -25,9 +24,9 @@ const INITIAL_STATE = {
 export default function(state = INITIAL_STATE, action) {
     switch (action.type) {
         case ADD_CART_PRODUCT:
-            var exists = false;
+            var exists = false
             const newCP = action.payload;
-            var cartProducts = [];
+            var cartProducts = []
             state.cartProducts.map(cartProduct => {
                 if(cartProduct.product._id == newCP._id) {
                     exists = true
@@ -35,17 +34,16 @@ export default function(state = INITIAL_STATE, action) {
                 }
                 cartProducts.push(cartProduct);
             })
-            if(exists == false) {
+            if(exists == false)  {
                 cartProducts.push({
                     _id: state.cartProducts.length + 1,
                     product: newCP,
-                    qauntity: 1
+                    quantity: 1
                 })
             }
-
             return {
                 ...state,
-                cartProducts: []
+                cartProducts: cartProducts
             }
         case SET_CART_PRODUCTS:
             return {
@@ -58,7 +56,7 @@ export default function(state = INITIAL_STATE, action) {
                 purchases: action.payload
             }
         case SET_PURCHASE_DETAIL:
-            let purchaseDetail
+            let purchaseDetail;
             state.purchases.map(purchase => {
                 if(purchase._id == action.payload) {
                     purchaseDetail = purchase;
@@ -68,9 +66,6 @@ export default function(state = INITIAL_STATE, action) {
                 ...state,
                 purchaseDetail
             }
-        
-            
-            break;
         default: return state;
     }
 }
