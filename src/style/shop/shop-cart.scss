@@ -53,6 +53,7 @@
         display: grid;
         grid-row: products-s/products-e;
         grid-column: s/e;
+        gap: 45px 0;
 
         overflow-y: scroll;
     }
