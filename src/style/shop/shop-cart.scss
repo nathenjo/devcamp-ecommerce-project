@@ -36,7 +36,7 @@
 
 .cart-content {
     display: grid;
-    grid-template-rows: 25px [title-s] 80px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
+    grid-template-rows: 25px [title-s] 40px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
     grid-template-columns: 25px [s] 1fr [e] 25px;
 
     &__title {
@@ -49,9 +49,12 @@
     }
 
     &__products {
+        padding-top: 50px;
         display: grid;
         grid-row: products-s/products-e;
         grid-column: s/e;
+
+        overflow-y: scroll;
     }
 
     &__footer {
