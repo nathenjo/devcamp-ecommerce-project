@@ -36,8 +36,9 @@
 .order-summary {
     display: grid;
     height: 150px;
-    grid-template-rows: 30px 24px 24px 46px;
     width: 240px;
+
+    grid-template-rows: 30px 24px 24px 46px;
     gap: 5px 0;
     .info-label {
         &__value {
