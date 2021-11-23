@@ -66,14 +66,14 @@ class ShippingForm extends Component {
             />
             <Field
                 className='shipping-form__back'
-                onClick={() => history.push('/signin')}
+                onClick={() => history.push('/shop')}
                 name='back'
                 type='button'
                 title='Back'
                 component={FormButton}
                 short={true}
             />
-            <OrderSummary className='shipping-form__summary'/>
+            <OrderSummary className='shipping-form__order-summary'/>
          </form>
        );
    }

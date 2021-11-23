@@ -1,14 +1,23 @@
-.underlined_title {
+.underlined-title {
     font-size: 14px;
     font-weight: 600;
     border-bottom: 1px solid #ccc;
 }
 
 .info-label {
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: [s] 1fr [m] 1fr [e];
+    align-items: center;
+    & > * {
+        grid-row: s/e;
+    }
     &__title {
+        grid-column: s/m;
         font-size: 14px;
     }
     &__value {
+        grid-column: m/e;
         color: $green;
         font-weight: 600;
         font-size: 18px;
@@ -16,8 +25,23 @@
 }
 
 .info-label-green {
-    &__title {
-        font-weight: 600;
-        color: $green;
+    .info-label {
+        &__title {
+            font-weight: 600;
+            color: $green;
+        }
+    }
+}
+
+.order-summary {
+    display: grid;
+    height: 150px;
+    grid-template-rows: 30px 24px 24px 46px;
+    width: 240px;
+    gap: 5px 0;
+    .info-label {
+        &__value {
+            justify-self: end;
+        }
     }
 }
