@@ -66,7 +66,7 @@ class ShippingForm extends Component {
             />
             <Field
                 className='shipping-form__back'
-                onClick={() => history.push('/shop')}
+                onClick={() => history.push('/order/review')}
                 name='back'
                 type='button'
                 title='Back'
